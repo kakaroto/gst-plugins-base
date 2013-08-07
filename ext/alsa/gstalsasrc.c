@@ -242,7 +242,7 @@ gst_alsasrc_change_state (GstElement * element, GstStateChange transition)
         if (GST_IS_SYSTEM_CLOCK (clk)) {
           gint clocktype;
           g_object_get (clk, "clock-type", &clocktype, NULL);
-          if (clocktype == GST_CLOCK_TYPE_MONOTONIC) {
+          if (clocktype == GST_CLOCK_TYPE_REALTIME) {
             GST_INFO ("Using driver timestamps !");
             alsa->driver_timestamps = TRUE;
           }
